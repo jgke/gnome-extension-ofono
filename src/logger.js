@@ -18,21 +18,35 @@
 
 const Lang = imports.lang;
 
-const Main = imports.ui.main;
+var enabled = true;
+var logLevel = 4;
+var infoEnabled = true;
 
-const ExtensionUtils = imports.misc.extensionUtils;
-const Ext = ExtensionUtils.getCurrentExtension();
-const Applet = Ext.imports.applet;
-
-let applet;
-let menu = Main.panel.statusArea.aggregateMenu;
-
-function init() {
+function logMessage(msg) {
+    log('oFono-applet: ' + msg);
 }
 
-function enable() {
-    applet = new Applet.Applet();
+function logError(error) {
+    logMessage('ERROR: ' + error);
 }
 
-function disable() {
+function logException(exception, msg) {
+    if(msg)
+        logMessage('Exception: ' + msg);
+    logMessage('Exception: ' + exception + ': ' + exception.stack);
+}
+
+function logWarning(error) {
+    if(loglevel > 1)
+        logMessage('WARNING: ' + error);
+}
+
+function logInfo(msg) {
+    if(logLevel > 2)
+        logMessage('INFO: ' + msg);
+}
+
+function logDebug(msg) {
+    if(logLevel > 3)
+        logMessage('DEBUG: ' + msg);
 }

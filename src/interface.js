@@ -122,21 +122,21 @@ const ConnectionManagerProxyWrapper = Gio.DBusProxy.makeProxyWrapper(_CONNECTION
 const ConnectionContextProxyWrapper = Gio.DBusProxy.makeProxyWrapper(_CONNECTION_CONTEXT_INTERFACE);
 
 function ManagerProxy() {
-    return new ManagerProxy(Gio.DBus.system, BUS_NAME, MANAGER_PATH);
+    return new ManagerProxyWrapper(Gio.DBus.system, BUS_NAME, MANAGER_PATH);
 }
 
 function ModemProxy(path) {
-    return new ModemProxy(Gio.DBus.system, BUS_NAME, path);
+    return new ModemProxyWrapper(Gio.DBus.system, BUS_NAME, path);
 }
 
 function SimManagerProxy(path) {
-    return new SimManagerProxy(Gio.DBus.system, BUS_NAME, path);
+    return new SimManagerProxyWrapper(Gio.DBus.system, BUS_NAME, path);
 }
 
 function ConnectionManagerProxy(path) {
-    return new ConnectionManagerProxy(Gio.DBus.system, BUS_NAME, path);
+    return new ConnectionManagerProxyWrapper(Gio.DBus.system, BUS_NAME, path);
 }
 
 function ConnectionContextProxy(path) {
-    return new ConnectionContextProxy(Gio.DBus.system, BUS_NAME, path);
+    return new ConnectionContextProxyWrapper(Gio.DBus.system, BUS_NAME, path);
 }

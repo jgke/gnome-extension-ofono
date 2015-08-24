@@ -3,5 +3,5 @@
     "name": "oFono Extension",
     "description": "Gnome-Shell oFono extension",
     "shell-version": ["3.14", "3.16"],
-    "url": "https://github.com/jgke/gnome-extension-ofono",
+    "url": "https://github.com/jgke/gnome-extension-ofono"
 }
